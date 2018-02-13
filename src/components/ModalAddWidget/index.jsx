@@ -48,15 +48,7 @@ export const AddWidgetModal = props => (
       >
         <Icon name="github" size="large" /> GitHub
       </Button>
-      <Button
-        basic
-        color="blue"
-        onClick={() => props.addWidget(SLACK_WIDGET_ID)}
-        inverted
-        disabled={props.ids.includes(SLACK_WIDGET_ID)}
-      >
-        <Icon name="slack" size="large" /> Slack
-      </Button>
+
       <Button
         color="red"
         onClick={props.hideAddWidgetModal}
