@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Header, Icon, Modal } from 'semantic-ui-react';
+import { Button, Header, Icon, Modal, Popup } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -33,22 +33,23 @@ export const AddWidgetModal = props => (
       <Button
         basic
         color="blue"
-        onClick={() => props.addWidget(SHEETS_WIDGET_ID)}
-        inverted
-        disabled={props.ids.includes(SHEETS_WIDGET_ID)}
-      >
-        <Icon name="table" size="large" />Sheets
-      </Button>
-      <Button
-        basic
-        color="blue"
         onClick={() => props.addWidget(GITHUB_WIDGET_ID)}
         inverted
         disabled={props.ids.includes(GITHUB_WIDGET_ID)}
       >
         <Icon name="github" size="large" /> GitHub
       </Button>
-
+      <Popup trigger={  <Button
+          basic
+          color="blue"
+          onClick={() => props.addWidget(SHEETS_WIDGET_ID)}
+          inverted
+          disabled={props.ids.includes(SHEETS_WIDGET_ID)}
+        >
+          <Icon name="table" size="large" />Sheets
+        </Button>}
+        content='Currently the Sheets widget API is Offline :/'
+        ></Popup>
       <Button
         color="red"
         onClick={props.hideAddWidgetModal}
@@ -56,6 +57,7 @@ export const AddWidgetModal = props => (
       >
         <Icon name="cancel" size="large" /> Cancel
       </Button>
+
     </Modal.Actions>
   </Modal>
 );
