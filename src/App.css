@@ -37,7 +37,10 @@
   color: #999;
   cursor: pointer;
 }
-
+.side-strip> i {
+  font-size: 23px;
+  margin-top: 12px;
+}
 .side-strip:focus {
   outline: 0;
 }

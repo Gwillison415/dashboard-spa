@@ -26,7 +26,7 @@ import {
 const initialState = {
   ids: [],
   byId: {},
-  showSidebar: false,
+  showSidebar: true,
   showAddWidgetModal: false,
   locked: false,
   grid: {
