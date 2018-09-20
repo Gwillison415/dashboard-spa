@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { sheets as sheetsReducer } from '@gdatabraid/sheets-widget2/lib/reducers';
 import { transit as transitReducer } from '@databraid/transit-widget/lib/reducers';
-import { github as githubReducer } from '@databraid/github-widget/lib/reducers';
+import { github as githubReducer } from '@gdatabraid/github-widget2/lib/reducers';
 import { storeReducer as slackReducer } from '@databraid/slack-widget/lib/Reducers';
 import { REHYDRATE } from 'redux-persist/constants';
 import widgetConfigs from '../configurations/';
