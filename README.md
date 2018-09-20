@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Attention Engineering hiring managers: Developer work is reflected best via the dev branch.
 
 The databraid dashboard widgets are to be imported and used inside this repo. the styling and arrangement of the widgets should be done using:
 
@@ -66,7 +66,7 @@ https://trello.com/b/GlhG504F/dashboard-spa
 }
 ```
 
-- The build command requires that `babel-preset-es2015` be installed as a dev dependency of the root of your create react app. 
+- The build command requires that `babel-preset-es2015` be installed as a dev dependency of the root of your create react app.
 
 - replace `name` with the the correct name for your SPA widget in the npm org.
 
@@ -99,7 +99,7 @@ By `rootReducer` we mean what goes in `state.widgets[widgetID]`.
 * use `import API from '@databraid/your-widget-name/lib/utils/Api` to work with the API exported by your widget.
 
 
-## Widget Reducer in Dashboard SPA. 
+## Widget Reducer in Dashboard SPA.
 
 * in the dashboard SPA create the `widgets` reducer, which is to be root level reducer of the redux store. Inside this reducer, for each widget create a key value pair for its reducer, like:
 
@@ -114,14 +114,16 @@ By `rootReducer` we mean what goes in `state.widgets[widgetID]`.
 }
 ```
 
-* The `key` (in the above example `widgetName` should be passed to the root level component of each widget as the prop `widgetId`. Then each widget can look in `state.widgets.byId[widgetId]` for the state corresponding to its widget in the redux store. This will obviously require a refactor of the widget SPAs. 
+* The `key` (in the above example `widgetName` should be passed to the root level component of each widget as the prop `widgetId`. Then each widget can look in `state.widgets.byId[widgetId]` for the state corresponding to its widget in the redux store. This will obviously require a refactor of the widget SPAs.
 
 * note that `widgetId` prop needs to be passed down the widget SPA component hierarchy. a component that wants to pass its own props to a child can do this like so:
 
 ```
   //inside the render function of a component
-  
+
   <ChildComponent {...this.props} />
 ```
 
 * This passings down of `widgetId` prop can be avoided if `widgetId` is placed inside the context of the root level component of the widget.
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
